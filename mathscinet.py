@@ -74,11 +74,10 @@ async def download_all(ids: list[int], batch_size: int = 100, concurrency_limit:
     return authors
 
 def fetch_authors(first: bool = False, batch: int = 100):
-    path_csv = r'C:\Users\wamjs\OneDrive\Documentos\Coding\mathematitians.csv'
-    path_coauthors = r'C:\Users\wamjs\OneDrive\Documentos\Coding\coauthors.pkl'
-    path_areas = r'C:\Users\wamjs\OneDrive\Documentos\Coding\areas.pkl'
-    mathsdata = pd.read_csv(r'C:\Users\wamjs\OneDrive\Documentos\Pavo\M.Sc\mathematicians_cleaned\mathematicians_cleaned.csv', header=0, encoding='utf8')
-    mathids = mathsdata['MRAuthorID'].to_list()
+    path_csv = r'../mathematitians.csv'
+    path_coauthors = r'../coauthors.pkl'
+    path_areas = r'../areas.pkl'
+    mathids = [i for i in range(1,100000000)]
     if first:
         df = pd.DataFrame(columns=['MRAuthorID','First Name','Last Name','First Publication','Publications','Citations',
                                    'Most Published Area'])
